@@ -1,0 +1,283 @@
+html {
+  background-color: #F9F9F9;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:hover {
+  color: #286090;
+}
+.site-title {
+  width: 35%;
+  padding-top: 26px;
+  padding-left: 451px;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+header {
+  position: relative;
+  height: 100px;
+  background-color: white;
+}
+
+nav {
+  color: grey;
+  position: absolute;
+  display: inline-block;
+  width: 24%;
+  text-align: right;
+  right: 30px;
+  padding-top: 26px;
+}
+
+nav a {
+  color: grey;
+  text-decoration: none;
+}
+
+nav li {
+  display: inline;
+  padding-left: 25px;
+}
+
+#login_form input, #register_form input {
+  border-radius: 15px;
+}
+
+#login_form, #register_form {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+
+.container2 {
+  background-image: url('http://static.canpages.ca/images/backgrounds/80009000/80009000_1.jpg');
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#title {
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  top: 1%;
+  left: 25%;
+  right: 15%;
+  font-size:5.0vw;
+  font-family: 'Rock Salt', cursive;
+}
+
+.form-as-link {
+  background-color: white;
+  border: none;
+  width: 30px;
+  display: inline-block;
+}
+
+.landing-title {
+  color: white;
+}
+
+.sign-in-div {
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+}
+
+#login {
+  position: absolute;
+  margin-left: 205px;
+}
+
+#register {
+  position: absolute;
+  margin-left: 591px;
+}
+
+.login-buttons {
+  background-color: #286090;
+  border: 2px solid #286090;
+  border-radius: 25px;
+  padding: 5%;
+  width: 205px;
+  height: 58px;
+}
+
+.login-buttons a {
+  color: white;
+  font-size: 28px;
+}
+
+.sign-in-div input {
+  height: 32px;
+  border: none;
+  width: 203px;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: #D3D3D3 solid 1px;
+}
+
+.main-container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+.left-col {
+  background-color: white;
+  height: 100%;
+  width: 34%;
+  float: left;
+  margin-top: 30px;
+  padding-right: 3%;
+  padding-left: 5%;
+  border-radius: 3%;
+  overflow: scroll;
+}
+
+.right-col {
+  width: 13%;
+  padding-left: 19%;
+  padding-right: 24%;
+  background-color: white;
+  height: 100%;
+  float: right;
+  margin-top: 30px;
+  border-radius: 2%;
+  overflow: scroll;
+}
+
+.left-col-header {
+  padding-left: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.right-col-header {
+  padding-left: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.right-col-header {
+  position: absolute;
+  right: 23%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-form [type="text"] {
+  margin-left: 8%;
+  height: 32px;
+  border: none;
+  width: 350px;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: #D3D3D3 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-form [type="submit"] {
+  margin-left: 8%;
+  height: 32px;
+  border: none;
+  width: 350px;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  background-color: #286090;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.restaurant-title {
+  font-weight: bold;
+}
+
+.business-search-list ul {
+  list-style: none;
+}
+
+.inner-ul {
+  padding-left: 17px;
+}
+
+.add-button [type="submit"] {
+  height: 32px;
+  border: none;
+  width: 50px;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: #D3D3D3 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.saved-list-div {
+  position: absolute;
+  display: block;
+  top: 23%;
+  left: 55%;
+  width: 200%;
+  height: 100%;
+}
+
+.saved-list-div ul {
+  list-style-type: none;
+}
+
+.img-in-div {
+  display: inline-block;
+}
+
+.details {
+  display: inline-block;
+  padding-left: 1%;
+}
+
+.delete-button [type="submit"] {
+  height: 32px;
+  border: none;
+  width: 50px;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-left: 40px;
+  margin-top: 5px;
+  border-bottom: #D3D3D3 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#map {
+  position: absolute;
+  height: 50%;
+  width: 20%;
+  left: -65px;
+}

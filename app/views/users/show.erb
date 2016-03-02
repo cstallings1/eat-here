@@ -1,0 +1,84 @@
+
+<div class="main-container">
+  <div class="left-col">
+    <h3 class="left-col-header">Search For a Restaurant</h3>
+    <div class="yelp-logo"><img src="/logo.png" alt="logo"></div>
+    <div>
+      <form class="search-form" id="search-form" method="post" action="/users/<%= @user.id %>">
+        <input type="text" name="name" placeholder="Restaurant Name"></br>
+        <input type="text" name="location" placeholder="Restaurant Location"></br>
+        <input type="submit" value="Search">
+      </form>
+    </div>
+
+    <%= erb :_business_short_display, locals: {businesses: @businesses, user: @user} %>
+
+  <div class="right-col">
+    <h3 class="right-col-header">Your Saved Restaurants</h3>
+    <div class="saved-list-div">
+      <% if @restaurants %>
+        <% @restaurants.each do |restaurant| %>
+        <ul>
+          <li>
+            <p class="restaurant-title"><%= restaurant.name %></p>
+            <div>
+              <ul>
+                <li class="img-in-div"><img src="<%= restaurant.img_url %>"></li>
+                <div class="details">
+                  <li><span class="restaurant-title">Address: </span><%= restaurant.location %></li>
+                  <li><span class="restaurant-title">Phone: </span><%= restaurant.phone.insert(3, '-').insert(7, '-') %></li>
+                  <li><span class="restaurant-title">Rating: </span><img src="<%= restaurant.rating %>"></li>
+                  <li><a href="<%= restaurant.url %>">Website</a></li>
+                </div>
+              </ul>
+            </div>
+            <form class="delete-button" action="/restaurants/<%= restaurant.id %>" method="POST">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="delete">
+            </form>
+          </li>
+        </ul>
+        <% end %>
+        <div id="map"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+  function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=<%= @google_api_key %>&signed_in=true&callback=initMap">
+</script>

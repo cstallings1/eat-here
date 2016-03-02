@@ -1,0 +1,26 @@
+<div>
+    <% if restaurants %>
+      <% restaurants.each do |restaurant| %>
+      <ul>
+        <li>
+          <h5><%= restaurant.name %></h5>
+           <img src="<%= restaurant.img_url %>">
+          <div>
+            <ul>
+              <li><%= restaurant.location %></li>
+              <li><%= restaurant.phone.insert(3, '-').insert(7, '-') %></li>
+              <li><a href="<%= restaurant.url %>">Website</a></li>
+              <li>Rating: <img src="<%= restaurant.rating %>"></li>
+            </ul>
+          </div>
+          <form action="/restaurants/<%= restaurant.id %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="delete">
+          </form>
+        </li>
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
+
+

@@ -1,0 +1,30 @@
+ <div class="business-search-list">
+    <% if businesses %>
+      <% businesses.each do |b| %>
+      <ul>
+        <li class="restaurant-title"><%= b.name %></li>
+          <ul class="inner-ul">
+            <li> <%= b.location.address[0] %></li>
+            <li> Rating: <img src="<%= b.rating_img_url_small %>"></li>
+            <li><a href="<%= b.url %>">Website</a></li>
+            <li>
+              <form class="add-button" id="add-restaurant" method="post" action="/restaurants">
+                <input type="submit" value="Add">
+                <input type="hidden" name="restaurant[name]" value="<%= b.name %>">
+                <input type="hidden" name="restaurant[location]" value="<%= b.location.address[0] %>">
+                <input type="hidden" name="restaurant[phone]" value="<%= b.phone %>">
+                <input type="hidden" name="restaurant[url]" value="<%= b.url %>">
+                <input type="hidden" name="restaurant[rating]" value="<%= b.rating_img_url_small %>">
+                <input type="hidden" name="restaurant[user_id]" value="<%= user.id %>">
+                <input type="hidden" name="restaurant[img_url]" value="<%= b.image_url %>">
+                <input type="hidden" name="restaurant[lat]" value="<%= b.location.coordinate.latitude %>">
+                <input type="hidden" name="restaurant[lon]" value="<%= b.location.coordinate.longitude %>">
+              </form>
+            </li>
+          </ul>
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

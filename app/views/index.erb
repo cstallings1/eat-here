@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+<div class="container">
+  <div class="container2">
+    <div id="title">
+      <h1 class="landing-title">eat<span class="dot">.</span>here</h1>
+    </div>
+    <div class="sign-in-div">
+      <div id="login">
+        <button class="login-buttons"><a id="login_link" href="/session/new">Login</a></button>
+        <form style="display:none" id="login_form" action="/session" method="POST">
+          <input type="text" name="username" placeholder="Username"></br>
+          <input type="password" name="password" placeholder="Password"></br>
+          <input type="submit" value="Go!">
+        </form>
+      </div>
+      <div id="register">
+        <button class="login-buttons"><a id="register_link" href="/users/new">Register</a></button>
+        <form autocomplete="off" id="register_form" action="/users" method="POST">
+          <input type="text" name="username" placeholder="Username"></br>
+          <input type="password" name="password" placeholder="Password"></br>
+          <input type="submit" value="Go!">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
